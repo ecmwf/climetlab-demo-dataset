@@ -43,7 +43,7 @@ class DemoDataset(Dataset):
     def to_xarray(self):
         return self._ds
 
-    def plot_map(self, driver, options):
+    def plot_map(self, driver):
         driver.plot_xarray(self._ds, "t2m")
 
 
