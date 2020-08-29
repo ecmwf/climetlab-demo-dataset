@@ -1,18 +1,13 @@
 #!/usr/bin/env python
+# (C) Copyright 2020 ECMWF.
 #
-# Copyright 2017-2018 European Centre for Medium-Range Weather Forecasts (ECMWF).
+# This software is licensed under the terms of the Apache Licence Version 2.0
+# which can be obtained at http://www.apache.org/licenses/LICENSE-2.0.
+# In applying this licence, ECMWF does not waive the privileges and immunities
+# granted to it by virtue of its status as an intergovernmental organisation
+# nor does it submit to any jurisdiction.
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+
 
 import io
 import os
@@ -25,7 +20,7 @@ def read(fname):
     return io.open(file_path, encoding="utf-8").read()
 
 
-version = "0.0.3"
+version = "0.0.4"
 
 
 setuptools.setup(
@@ -39,7 +34,7 @@ setuptools.setup(
     url="https://github.com/ecmwf/climetlab-demo-dataset",
     packages=setuptools.find_packages(),
     include_package_data=True,
-    install_requires=[],
+    install_requires=["xarray"],
     zip_safe=True,
     entry_points={'climetlab.datasets': ['demo-dataset = climetlab_demo_dataset']},
     keywords="meteorology",
