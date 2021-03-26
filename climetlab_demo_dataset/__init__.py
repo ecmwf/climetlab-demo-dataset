@@ -18,10 +18,7 @@ class DemoDataset(Dataset):
     home_page = "https://github.com/ecmwf/climetlab-demo-dataset"
     documentation = "Generates a dummy temperature field"
 
-    def __init__(self):
-        pass
-
-    def _load(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
 
         lon = np.arange(-180.0, 180.0, 1.0)
         lat = np.arange(90.0, -91.0, -1.0)
