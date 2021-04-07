@@ -7,10 +7,11 @@
 # nor does it submit to any jurisdiction.
 #
 
-from climetlab import Dataset
 import math
-import xarray as xr
+
 import numpy as np
+import xarray as xr
+from climetlab import Dataset
 
 
 class DemoDataset(Dataset):
@@ -34,9 +35,18 @@ class DemoDataset(Dataset):
             coords={"longitude": lon, "latitude": lat},
         )
 
-        ds["latitude"].attrs = dict(units="degrees_north", standard_name="latitude")
-        ds["longitude"].attrs = dict(units="degrees_north", standard_name="longitude")
-        ds["t2m"].attrs = dict(units="K", long_name="2 metre temperature")
+        ds["latitude"].attrs = dict(
+            units="degrees_north",
+            standard_name="latitude",
+        )
+        ds["longitude"].attrs = dict(
+            units="degrees_north",
+            standard_name="longitude",
+        )
+        ds["t2m"].attrs = dict(
+            units="K",
+            long_name="2 metre temperature",
+        )
 
         self._ds = ds
 
