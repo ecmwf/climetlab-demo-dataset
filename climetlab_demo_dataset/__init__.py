@@ -19,15 +19,15 @@ class DemoDataset(Dataset):
     home_page = "https://github.com/ecmwf/climetlab-demo-dataset"
     documentation = "Generates a dummy temperature field"
 
-    def __init__(self, *args, **kwargs):
+    def _load(self, *args, **kwargs):
 
         lon = np.arange(-180.0, 180.0, 1.0)
         lat = np.arange(90.0, -91.0, -1.0)
         t2m = 273.15 + 20.0 * np.random.randn(len(lat), len(lon))
         t2m = np.zeros(shape=(len(lat), len(lon)))
 
-        for i in range(0, len(lat)):
-            for j in range(0, len(lon)):
+        for i in range(len(lat)):
+            for j in range(len(lon)):
                 t2m[i, j] = 273.15 + (math.sin(i / 45.0) + math.sin(j / 90.0)) * 15
 
         ds = xr.Dataset(
