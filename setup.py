@@ -20,7 +20,7 @@ def read(fname):
     return io.open(file_path, encoding="utf-8").read()
 
 
-version = "0.0.8"
+version = "0.0.9"
 
 
 setuptools.setup(
@@ -36,7 +36,9 @@ setuptools.setup(
     include_package_data=True,
     install_requires=["xarray"],
     zip_safe=True,
-    entry_points={"climetlab.datasets": ["demo-dataset = climetlab_demo_dataset"]},
+    entry_points={
+        "climetlab.datasets": ["demo-dataset = climetlab_demo_dataset:DemoDataset"]
+    },
     keywords="meteorology",
     classifiers=[
         "Development Status :: 3 - Alpha",
