@@ -1,4 +1,4 @@
-# climetlab-demo-source
+# climetlab-demo-dataset
 
 This is an example of dataset plugin for CliMetLab. It provide an artifical dataset defined from the plugin's python code.
 
